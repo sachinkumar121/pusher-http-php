@@ -1101,11 +1101,12 @@ class Pusher implements LoggerAwareInterface, PusherInterface
         $post_params['name'] = $event;
         $post_params['data'] = $data_encoded;
         $channel_values = array_values($channels);
-        if (count($channel_values) == 1) {
-          $post_params['channel'] = $channel_values[0];
-        } else {
-          $post_params['channels'] = $channel_values;
-        }
+        // if (count($channel_values) == 1) {
+        //   $post_params['channel'] = $channel_values[0];
+        // } else {
+        //   $post_params['channels'] = $channel_values;
+        // }
+        $post_params['channels'] = $channel_values;
         if (!is_null($info)) {
           $post_params['info'] = $info;
         }
